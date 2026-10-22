@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile & Activity Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Saved Users</h2>
+      <p class="muted">Your bookmarked profiles</p>
+      <ul id="savedUsers" class="saved-list">
+        <li class="muted">No saved users yet.</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <header>
+        <p class="eyebrow">MINI PROJECT</p>
+        <h1>User Profile & Activity Explorer</h1>
+        <p class="muted">Search users, explore their posts, and bookmark profiles.</p>
+      </header>
+
+      <form id="userForm" class="search-form">
+        <label for="userId">User ID (1–10)</label>
+        <div class="search-row">
+          <input id="userId" type="number" min="1" max="10" placeholder="Enter User ID, e.g. 1" />
+          <button type="submit">Search User</button>
+          <button type="button" id="randomBtn" class="secondary">Random User</button>
+        </div>
+        <p id="message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div id="loading" class="loading hidden">Loading user details...</div>
+      <section id="profileArea"></section>
+      <section id="postsArea"></section>
+    </main>
+  </div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
